@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- experiences.html — the tours and experiences a traveller can book. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport: phones use their real width, so the one-column layout in the
+       media query takes over at 700px and below. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Experiences — NativeGo</title>
+  <!-- The one shared stylesheet, linked from every page. -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- header: same banner as every page. -->
+  <header>
+    <h1>NativeGo</h1>
+    <p>Travel Kenya with a verified local guide by your side.</p>
+  </header>
+
+  <!-- nav: same menu as every page, one Flexbox row with no bullets. -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="guides.html">Guides</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="request.html">Request a Guide</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- main: this page's own content. -->
+  <main>
+    <section>
+      <h2>Experiences on offer</h2>
+      <p>Each experience is led by a verified local guide. Prices are per person in Kenya
+        shillings and include the guide; park fees, transport and meals are confirmed with
+        the guide before you pay.</p>
+    </section>
+
+    <!-- Experience cards. The row wraps onto new lines on narrow screens. -->
+    <section>
+      <h2>Experiences on offer</h2>
+      <div class="cards">
+        <article class="card">
+          <img class="photo" src="images/nairobi.jpg" alt="Nairobi city skyline">
+          <h3>Nairobi City Walk</h3>
+          <p>Downtown stories, markets and viewpoints with Wanjiru, a born-and-raised
+            Nairobi guide.</p>
+          <p><strong>Duration:</strong> 4 hours<br>
+            <strong>Price:</strong> KES 3,500 per person</p>
+        </article>
+        <article class="card">
+          <img class="photo" src="images/mara.jpg" alt="Lions in the Maasai Mara">
+          <h3>Maasai Mara Day Trip</h3>
+          <p>A full day on safari with Naserian, ending with a Maasai village visit and
+            stories by the fire.</p>
+          <p><strong>Duration:</strong> 12 hours<br>
+            <strong>Price:</strong> KES 18,000 per person</p>
+        </article>
+        <article class="card">
+          <img class="photo" src="images/karura.jpg" alt="Karura Forest Reserve sign on the trail">
+          <h3>Karura Forest Hike</h3>
+          <p>Waterfalls, caves and quiet trails in Nairobi's green lung, with a guide who
+            knows every path.</p>
+          <p><strong>Duration:</strong> 3 hours<br>
+            <strong>Price:</strong> KES 2,000 per person</p>
+        </article>
+        <article class="card">
+          <img class="photo" src="images/lamu.jpg" alt="A dhow in Lamu">
+          <h3>Lamu Old Town and Dhow Sunset</h3>
+          <p>Swahili architecture, donkey lanes and a sunset dhow ride with Yusuf, a
+            Lamu old town native.</p>
+          <p><strong>Duration:</strong> Full day<br>
+            <strong>Price:</strong> KES 9,500 per person</p>
+        </article>
+        <article class="card">
+          <img class="photo" src="images/amboseli.jpg" alt="Elephants at Amboseli with Mount Kilimanjaro">
+          <h3>Amboseli Elephant View</h3>
+          <p>Two days under Kilimanjaro watching elephant herds, with David's eye for
+            photography spots.</p>
+          <p><strong>Duration:</strong> 2 days<br>
+            <strong>Price:</strong> KES 32,000 per person</p>
+        </article>
+        <article class="card">
+          <img class="photo" src="images/diani.jpg" alt="Diani Beach">
+          <h3>Diani Beach Relax and Snorkel</h3>
+          <p>White sand, a reef snorkel and Swahili seafood lunch with Amina, who grew
+            up on the coast.</p>
+          <p><strong>Duration:</strong> Full day<br>
+            <strong>Price:</strong> KES 7,500 per person</p>
+        </article>
+      </div>
+      <p>Something else in mind? <a href="request.html">Request a custom trip</a> and tell
+        us where you want to go.</p>
+    </section>
+  </main>
+
+  <!-- aside: a seasonal note, so the side column is useful. -->
+  <aside>
+    <h2>When to go</h2>
+    <p>Dry months (January to March, July to October) are best for safaris and hikes.
+      The coast is warm all year, but carry rain gear from November to December.</p>
+    <p>Weekend slots fill fast — request at least three days ahead.</p>
+  </aside>
+
+  <!-- footer: same on every page. -->
+  <footer>
+    <p>NativeGo — connecting tourists with verified local guides in Kenya.</p>
+  </footer>
+</body>
+</html>

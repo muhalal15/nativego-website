@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<!-- how-it-works.html — the booking journey step by step, plus safety and trust. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport: phones use their real width, so the one-column layout in the
+       media query takes over at 700px and below. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How It Works — NativeGo</title>
+  <!-- The one shared stylesheet, linked from every page. -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- header: same banner as every page. -->
+  <header>
+    <h1>NativeGo</h1>
+    <p>Travel Kenya with a verified local guide by your side.</p>
+  </header>
+
+  <!-- nav: same menu as every page, one Flexbox row with no bullets. -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="guides.html">Guides</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="request.html">Request a Guide</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- main: this page's own content. -->
+  <main>
+    <section>
+      <h2>The booking journey</h2>
+      <p>Booking a guide on NativeGo takes five steps, and you are never locked in
+        before you have seen your guide's profile and price.</p>
+      <!-- An ordered list is the right tag here: the steps have a real order,
+           and the numbers are part of the meaning. -->
+      <ol>
+        <li><strong>Send a request.</strong> Fill in the request form with your destination,
+          travel date and group size.</li>
+        <li><strong>Get matched.</strong> We match you with a verified guide for your
+          destination and send you their profile, languages and price.</li>
+        <li><strong>Confirm and pay.</strong> Once you agree, you confirm and pay through
+          M-Pesa. You get a payment record you can keep.</li>
+        <li><strong>Meet and explore.</strong> Meet your guide at the agreed place and time,
+          and enjoy the trip.</li>
+        <li><strong>Rate your guide.</strong> After the trip, leave a public review so the
+          next traveller can book with confidence.</li>
+      </ol>
+      <p><a class="button" href="request.html">Start Your Request</a></p>
+    </section>
+
+    <!-- Safety and trust section, as three cards that wrap on narrow screens. -->
+    <section>
+      <h2>Safety and trust</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Verified guides only</h3>
+          <p>Identity confirmed and experience reviewed before any guide is listed.
+            Unverified guides never appear on the site.</p>
+        </article>
+        <article class="card">
+          <h3>Public reviews</h3>
+          <p>Every rating stays visible on the guide's profile. Guides cannot hide or
+            delete reviews, so a high rating actually means something.</p>
+        </article>
+        <article class="card">
+          <h3>Payment with a record</h3>
+          <p>Payment goes through M-Pesa, so both sides keep a record of what was paid.
+            Agree the full price with your guide before the trip, and never pay extra
+            cash to strangers along the way.</p>
+        </article>
+      </div>
+      <p>If anything feels wrong during a trip, call the helpline on
+        +254 712 345 678 and tell us straight away.</p>
+    </section>
+  </main>
+
+  <!-- aside: the safety helpline, so the side column is useful. -->
+  <aside>
+    <h2>Safety helpline</h2>
+    <p>+254 712 345 678<br>
+      Monday to Saturday, 8:00am – 5:00pm.</p>
+    <p>Share your guide's name and your meeting point when you call, so we can
+      reach you fast.</p>
+  </aside>
+
+  <!-- footer: same on every page. -->
+  <footer>
+    <p>NativeGo — connecting tourists with verified local guides in Kenya.</p>
+  </footer>
+</body>
+</html>

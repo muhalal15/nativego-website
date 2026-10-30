@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!-- request.html — the "request a guide" form. -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- viewport: phones use their real width, so the one-column layout in the
+       media query takes over at 700px and below. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Guide — NativeGo</title>
+  <!-- The one shared stylesheet, linked from every page. -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- header: same banner as every page. -->
+  <header>
+    <h1>NativeGo</h1>
+    <p>Travel Kenya with a verified local guide by your side.</p>
+  </header>
+
+  <!-- nav: same menu as every page, one Flexbox row with no bullets. -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="guides.html">Guides</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="request.html">Request a Guide</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- main: this page's own content. -->
+  <main>
+    <section>
+      <h2>Request a guide</h2>
+      <p>Tell us about your trip and we will match you with a verified guide. Fields
+        marked with * must be filled in before the form can be sent.</p>
+    </section>
+
+    <!-- The form. action="#" and method="get" are used on purpose: no backend
+         exists yet, so the form does not really send anywhere — "#" just reloads
+         this page and "get" would put the answers in the address bar. When a
+         backend is built later, action will point to it and method will change. -->
+    <!-- How validation works here: required stops an empty field being sent;
+         type="email" makes the browser check for an @ sign and a domain;
+         pattern checks the phone number against a rule we wrote; min and max
+         set the allowed range for dates and numbers. The browser does all of
+         this with no JavaScript, which is why this assignment is HTML only. -->
+    <section>
+      <h2>Request a guide</h2>
+      <form action="#" method="get">
+        <!-- label's for matches the control's id. Clicking the label then puts
+             the cursor in the right box, and screen readers can announce which
+             label belongs to which control. -->
+        <label for="fullname">Full name *</label>
+        <input type="text" id="fullname" name="fullname" required>
+
+        <label for="email">Email address *</label>
+        <input type="email" id="email" name="email" required>
+
+        <!-- pattern accepts exactly two Kenyan formats: 07XXXXXXXX (10 digits
+             starting 07) or +2547XXXXXXXX (a +254 followed by 7 and 8 digits).
+             The | in the middle means "or". -->
+        <label for="phone">Phone number *</label>
+        <input type="tel" id="phone" name="phone" pattern="(07[0-9]{8}|\+2547[0-9]{8})" placeholder="0712345678 or +254712345678" required>
+
+        <!-- min stops anyone picking a travel date in the past: the earliest
+             allowed date is 2026-10-28. -->
+        <label for="traveldate">Travel date *</label>
+        <input type="date" id="traveldate" name="traveldate" min="2026-10-28" required>
+
+        <!-- min="1" and max="20" mean groups of 1 to 20 travellers only. -->
+        <label for="travellers">Number of travellers *</label>
+        <input type="number" id="travellers" name="travellers" min="1" max="20" required>
+
+        <label for="destination">Destination *</label>
+        <select id="destination" name="destination" required>
+          <option value="">-- Choose a destination --</option>
+          <option value="nairobi">Nairobi</option>
+          <option value="maasai-mara">Maasai Mara</option>
+          <option value="karura">Karura Forest</option>
+          <option value="lamu">Lamu Old Town</option>
+          <option value="amboseli">Amboseli</option>
+          <option value="diani">Diani Beach</option>
+          <option value="other">Somewhere else (say where below)</option>
+        </select>
+
+        <label for="message">Tell us about your trip</label>
+        <textarea id="message" name="message" rows="5" placeholder="Example: two adults, interested in a Nairobi city walk, and we would like guide Wanjiru if she is free."></textarea>
+
+        <button type="submit">Send Request</button>
+      </form>
+      <p>We reply within one working day. If your trip is less than three days away,
+        call the helpline on +254 712 345 678 instead.</p>
+    </section>
+  </main>
+
+  <!-- aside: what happens after sending, so the side column is useful. -->
+  <aside>
+    <h2>After you send this</h2>
+    <p>We match you with a verified guide and send their profile, languages and
+      price before you commit to anything.</p>
+    <p>No payment is taken from this form. Payment happens later, through M-Pesa,
+      once you agree with your guide.</p>
+  </aside>
+
+  <!-- footer: same on every page. -->
+  <footer>
+    <p>NativeGo — connecting tourists with verified local guides in Kenya.</p>
+  </footer>
+</body>
+</html>

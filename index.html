@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- index.html — the home page of the NativeGo website. -->
+<html lang="en">
+<head>
+  <!-- charset tells the browser this page uses UTF-8, so characters like é display correctly. -->
+  <meta charset="UTF-8">
+  <!-- viewport tells a phone to show the page at its real screen width instead of
+       shrinking a desktop page down. Without it, the phone layout never kicks in. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NativeGo — Find a Verified Local Guide in Kenya</title>
+  <!-- One shared stylesheet for the whole site. Every page links this same file,
+       so the header, colours and layout stay identical everywhere. -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- header: the top banner, the same on every page. It holds the site name
+       and a one-line promise of what NativeGo does. -->
+  <header>
+    <h1>NativeGo</h1>
+    <p>Travel Kenya with a verified local guide by your side.</p>
+  </header>
+
+  <!-- nav: the main menu, the same on every page. The list is styled as one
+       Flexbox row in the stylesheet, with no bullet points. -->
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="guides.html">Guides</a></li>
+      <li><a href="experiences.html">Experiences</a></li>
+      <li><a href="how-it-works.html">How It Works</a></li>
+      <li><a href="request.html">Request a Guide</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- main: the page's own content. Each page has different content here,
+       but the header, nav, aside and footer around it stay the same. -->
+  <main>
+    <!-- Hero section: the first thing a visitor reads. It states the problem
+         NativeGo solves and ends with a button to the request form. -->
+    <section>
+      <h2>See Kenya through local eyes</h2>
+      <p>NativeGo connects tourists with verified local guides across Kenya. Instead of guessing
+        your way around a new town, you travel with someone who lives there, speaks the local
+        languages, and knows which matatu stage, market stall and viewpoint are worth your time.</p>
+      <p>Every guide on this site is checked before they are listed: identity confirmed, experience
+        reviewed, and past travellers' ratings kept public. You book the person, not just the place.</p>
+      <a class="button" href="request.html">Request a Guide</a>
+    </section>
+
+    <!-- How it works in three steps. Each step is a card, and the row of cards
+         wraps onto a new line on narrow screens (flex-wrap in the stylesheet). -->
+    <section>
+      <h2>How it works in 3 steps</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>1. Tell us your trip</h3>
+          <p>Fill in the request form with your destination, travel date and group size. It takes
+            about two minutes.</p>
+        </article>
+        <article class="card">
+          <h3>2. Meet your matched guide</h3>
+          <p>We match you with a verified guide for your destination and share their profile,
+            languages and price before you commit.</p>
+        </article>
+        <article class="card">
+          <h3>3. Explore, then rate</h3>
+          <p>Travel together, pay through M-Pesa, and leave a public review so the next
+            traveller can book with confidence.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Featured guides: a small preview of the full guides page. -->
+    <section>
+      <h2>Featured guides</h2>
+      <div class="cards">
+        <article class="card">
+          <img class="photo" src="images/wanjiru.jpg" alt="Wanjiru Mwangi, Nairobi guide">
+          <h3>Wanjiru Mwangi — Nairobi</h3>
+          <p>City walks and history. English, Swahili and Kikuyu. Rated 4.9 out of 5.</p>
+        </article>
+        <article class="card">
+          <img class="photo" src="images/naserian.jpg" alt="Naserian Lekuton, Maasai Mara guide">
+          <h3>Naserian Lekuton — Maasai Mara</h3>
+          <p>Safari and Maasai culture. English, Swahili and Maa. Rated 5.0 out of 5.</p>
+        </article>
+        <article class="card">
+          <img class="photo" src="images/yusuf.jpg" alt="Yusuf Abdalla, Lamu guide">
+          <h3>Yusuf Abdalla — Lamu</h3>
+          <p>Old town walks and dhow trips. English, Swahili and Arabic. Rated 4.9 out of 5.</p>
+        </article>
+      </div>
+      <p><a href="guides.html">See all guides</a></p>
+    </section>
+
+    <!-- Closing call to action. -->
+    <section>
+      <h2>Ready to travel differently?</h2>
+      <p>Whether it is a morning in Karura Forest or a week along the coast, a local guide turns
+        a good trip into a story you will keep telling.</p>
+      <a class="button" href="experiences.html">Browse Experiences</a>
+    </section>
+  </main>
+
+  <!-- aside: useful side information. On this page it is the helpline and a
+       booking tip, so the column is never empty. -->
+  <aside>
+    <h2>Need help?</h2>
+    <p>Helpline: +254 712 345 678 (Monday to Saturday).</p>
+    <p>Tip: guides get booked early for weekends and public holidays. Request at least
+      three days ahead when you can.</p>
+  </aside>
+
+  <!-- footer: the same closing line on every page. -->
+  <footer>
+    <p>NativeGo — connecting tourists with verified local guides in Kenya.</p>
+  </footer>
+</body>
+</html>
