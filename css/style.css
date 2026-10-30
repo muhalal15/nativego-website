@@ -1,0 +1,243 @@
+/* House style — main #1D4ED8 ground #FDE68A ink #172554 accent #EA580C headings: Georgia, serif body: Arial, Helvetica, sans-serif */
+/* House style explained: main is the blue used for the header and headings,
+   ground is the soft yellow page background, ink is the dark navy text colour,
+   accent is the orange used only for buttons and small highlights.
+   Headings use Georgia (a serif font), body text uses Arial (a sans-serif font). */
+
+/* This rule makes padding and borders count INSIDE an element's width.
+   Without it, a box set to 100% wide plus padding would overflow and
+   push the page sideways on a phone. */
+* {
+  box-sizing: border-box;
+}
+
+/* The whole page is a CSS Grid. The body is the grid container and its five
+   children (header, nav, main, aside, footer) are placed into NAMED areas.
+   grid-template-columns gives the main column all free space but never less
+   than 0 (minmax(0, 1fr)), and fixes the aside at 18rem. The minmax(0, ...)
+   part matters: a plain 1fr lets a wide table force the column wider than
+   the screen, which is what makes a page scroll sideways. */
+body {
+  margin: 0;
+  background-color: #FDE68A;
+  color: #172554;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 18rem;
+  grid-template-areas:
+    "header header"
+    "nav nav"
+    "main aside"
+    "footer footer";
+}
+
+/* grid-area drops each section into the named slot from the grid above. */
+header {
+  grid-area: header;
+  background-color: #1D4ED8;
+  color: #FFFFFF;
+  padding: 1.5rem;
+}
+
+header h1 {
+  margin: 0;
+  font-family: Georgia, serif;
+}
+
+/* The nav bar sits in its own grid row, in the dark ink colour. */
+nav {
+  grid-area: nav;
+  background-color: #172554;
+  padding: 0.5rem 1.5rem;
+}
+
+/* Flexbox on the nav list: the links sit in ONE row, evenly spaced,
+   with no bullet points. Flexbox lays items out in a line for us. */
+nav ul {
+  display: flex;
+  gap: 1rem;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: #EA580C;
+}
+
+/* The main content column. */
+main {
+  grid-area: main;
+  padding: 1.5rem;
+}
+
+/* The side column: useful info on every page, never left empty. */
+aside {
+  grid-area: aside;
+  background-color: #FFFFFF;
+  border-left: 4px solid #EA580C;
+  padding: 1.5rem;
+}
+
+footer {
+  grid-area: footer;
+  background-color: #172554;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1rem;
+}
+
+h2,
+h3 {
+  font-family: Georgia, serif;
+  color: #1D4ED8;
+}
+
+/* Headings inside the dark header and footer stay readable on dark colours. */
+header h2,
+footer p {
+  color: #FFFFFF;
+}
+
+/* A row of cards. Flexbox puts the cards side by side, and flex-wrap lets
+   them drop onto a new row when the screen gets narrow instead of
+   squeezing or overflowing. */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* One card: it can grow and shrink, but never gets narrower than 16rem,
+   so cards wrap into a new row rather than becoming unreadably thin. */
+.card {
+  flex: 1 1 16rem;
+  background-color: #FFFFFF;
+  border: 1px solid #1D4ED8;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+/* A photo in a card. Real photos live in the images/ folder, and
+   object-fit: cover crops each one to the same height so the card
+   row stays even. The Karura photo is the student's own picture;
+   the rest are freely licensed Wikimedia Commons photos. */
+.photo {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* A call-to-action button: a link styled to look like a button. */
+.button {
+  display: inline-block;
+  background-color: #EA580C;
+  color: #FFFFFF;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+}
+
+/* Every table lives inside this wrapper. If a table is wider than its
+   column, only the wrapper scrolls sideways — the page itself never does. */
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  background-color: #FFFFFF;
+}
+
+th,
+td {
+  border: 1px solid #1D4ED8;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+thead th {
+  background-color: #1D4ED8;
+  color: #FFFFFF;
+}
+
+tfoot td {
+  font-weight: bold;
+  background-color: #FDE68A;
+}
+
+/* Form labels sit on their own line above each control. */
+label {
+  display: block;
+  font-weight: bold;
+  margin-top: 1rem;
+}
+
+/* The sideways-scroll trap: no image or form control may ever grow wider
+   than its container, whatever the user types or whatever the screen size. */
+img,
+input,
+select,
+textarea {
+  max-width: 100%;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #1D4ED8;
+  border-radius: 4px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* The submit button uses the orange accent colour. */
+button {
+  background-color: #EA580C;
+  color: #FFFFFF;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+/* THE MEDIA QUERY — this must stay LAST in the file. A media query only
+   applies when its condition is true, so putting it last means its rules
+   win over the rules above on small screens. At 700px wide or less, the
+   grid becomes ONE column: header, nav, main, aside and footer stack
+   top to bottom, and the nav links stack vertically too. That is what
+   stops the page scrolling sideways on a phone. */
+@media (max-width: 700px) {
+  body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  aside {
+    border-left: none;
+    border-top: 4px solid #EA580C;
+  }
+}
